@@ -1,4 +1,4 @@
 # gitignore file
 
 .DS_Store
-*.pdf
+*_question.pdf
