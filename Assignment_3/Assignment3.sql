@@ -13,7 +13,7 @@ ORDER BY ProductName DESC;
 --@block Task 3
 SELECT ProductID, ProductName, QuantityPerUnit
 FROM Products
-WHERE QuantityPerUnit LIKE '%500 g'
+WHERE QuantityPerUnit LIKE '%500 g%'
 ORDER BY ProductID DESC;
 
 --@block Task 4
@@ -72,13 +72,11 @@ WHERE HireDate < '1994-01-01' AND Title LIKE '%Representative%' AND PostalCode L
 --@block Task 13
 SELECT EmployeeID, CustomerID
 FROM Orders
-WHERE CustomerID LIKE 'BO%' 
-AND (CustomerID LIKE '___t%' OR CustomerID LIKE '___i%')
+WHERE CustomerID LIKE 'BO_t%' OR CustomerID LIKE 'BO_i%'
 AND Freight > 50;
 
 --@block Task 14
 SELECT E.EmployeeID, E.LastName, O.CustomerID
 FROM Employees E JOIN Orders O ON E.EmployeeID = O.EmployeeID
-WHERE O.CustomerID LIKE 'BO%' 
-AND O.CustomerID LIKE '___t%'
+WHERE O.CustomerID LIKE 'BO_t%' 
 AND E.LastName LIKE '%LL%';
