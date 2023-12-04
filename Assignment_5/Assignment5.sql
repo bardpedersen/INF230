@@ -37,8 +37,7 @@ FROM products P
     JOIN orderdetails O ON P.ProductID = O.ProductID
 WHERE P.discontinued = 1
 GROUP BY P.ProductID
-HAVING Units > 50
-ORDER BY Units DESC;
+HAVING Units > 50;
 
 --@block Task 5
 SELECT C.ContactName,
@@ -95,7 +94,7 @@ FROM customers C
     JOIN categories CA ON P.CategoryID = CA.CategoryID
 WHERE CA.CategoryName = 'Beverages'
 GROUP BY C.CustomerID
-ORDER BY AvgPurchaseQuantity DESC;
+ORDER BY AvgPurchaseQuantity;
 
 --@block Creating the table
 CREATE TABLE employee_work_hours (
